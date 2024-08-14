@@ -152,8 +152,8 @@ const convertTemperature = (temp, scale) => {
     const toFahr = (temp * (9/5) + 32)
     const toCels = ((temp - 32) * (5/9))
 
-    if(scale.toLowerCase() === "c") return toFahr
-    if(scale.toLowerCase() === 'f') return toCels
+    if(scale.toLowerCase() === "c") return `${toFahr} (Fahrenheit)`
+    if(scale.toLowerCase() === 'f') return `${toCels} (Celsius)`
 }
 
 
@@ -210,3 +210,31 @@ const calculateGrade = (score) => {
 
 
 console.log('Exercise 10 Result:', calculateGrade(85));
+
+
+/*
+Exercise 11: createUsername()
+
+Define a function called createUsername. 
+It should take a first name and a last name and return a username. 
+
+The username should be a combination of the following:
+- The first three letters of the first name.
+- The first three letters of the last name.
+- The total character count of the first and last name combined.
+
+Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
+
+Complete the exercise in the space below:
+*/
+const createUsername = (fname, lname) => {
+    const firstThreeOfFname = fname.slice(0,3)
+    const firstThreeOfLname = lname.slice(0,3)
+    const nameLength = fname.length + lname.length
+
+    return firstThreeOfFname + firstThreeOfLname + nameLength
+}
+
+
+console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
+
